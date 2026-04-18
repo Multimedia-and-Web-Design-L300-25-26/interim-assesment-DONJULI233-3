@@ -136,7 +136,7 @@ const CryptoTickerSection = () => {
                   >
                     {tab === "tradable" && "Tradable"}
                     {tab === "gainers" && "Top gainers"}
-                    {tab === "new" && "New on Coinbase"}
+                    {tab === "new" && "New Listings"}
                   </button>
                 ))}
               </div>

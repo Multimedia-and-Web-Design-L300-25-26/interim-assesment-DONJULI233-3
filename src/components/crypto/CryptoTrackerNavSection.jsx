@@ -9,7 +9,7 @@ const CryptoTrackerNavSection = () => {
   const tabs = [
     { id: "tradable" as TabType, name: "Tradable" },
     { id: "gainers" as TabType, name: "Top gainers" },
-    { id: "new" as TabType, name: "New on Coinbase" },
+    { id: "new" as TabType, name: "New Listings" },
   ];
 
   return (

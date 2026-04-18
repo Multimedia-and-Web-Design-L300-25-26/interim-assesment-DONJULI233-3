@@ -25,7 +25,7 @@ const BusinessDropDown = () => {
     },
     {
       title: "Asset Listings",
-      subtitle: "List your asset on Coinbase",
+      subtitle: "List your asset on our platform",
       icon: <CircleStackIcon className="w-5 h-5" />,
     },
     {

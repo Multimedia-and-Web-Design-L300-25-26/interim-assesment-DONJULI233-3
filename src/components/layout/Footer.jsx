@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo - hidden on mobile, shown on tablet+ */}
           <div className="hidden sm:flex shrink-0 pt-1">
             <svg
-              title="Coinbase Logo"
+              title="Crypto App Logo"
               width="44"
               height="44"
               viewBox="0 0 40 40"
@@ -30,7 +30,7 @@ export default function Footer() {
               height="44"
               viewBox="0 0 40 40"
               fill="none"
-              title="Coinbase Logo"
+              title="Crypto App Logo"
             >
               <circle cx="20" cy="20" r="20" fill="#0052FF" />
               <path
@@ -176,7 +176,7 @@ export default function Footer() {
                       href="#"
                       className="text-gray-600 hover:text-blue-600 text-xs sm:text-sm"
                     >
-                      Coinbase Bytes newsletter
+                      Crypto Newsletter
                     </a>
                   </li>
                   <li>
@@ -300,7 +300,7 @@ export default function Footer() {
                       href="#"
                       className="text-gray-600 hover:text-blue-600 text-xs sm:text-sm"
                     >
-                      Coinbase One
+                      Premium Service
                     </a>
                   </li>
                   <li>
@@ -333,7 +333,7 @@ export default function Footer() {
                       href="#"
                       className="text-gray-600 hover:text-blue-600 text-xs sm:text-sm"
                     >
-                      Coinbase Business
+                      Business Solutions
                     </a>
                   </li>
                   <li>
@@ -808,7 +808,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs sm:text-sm text-gray-600">
           <div className="flex items-center gap-2 flex-wrap">
-            <span>&copy; 2026 Coinbase</span>
+            <span>&copy; 2026 Crypto App Demo</span>
             <span className="text-gray-400">&bull;</span>
             <Link to="/" className="hover:text-blue-600 underline">
               Privacy
@@ -835,6 +835,15 @@ export default function Footer() {
             <span className="text-gray-400">&bull;</span>
             <span>English</span>
           </div>
+        </div>
+      </div>
+
+      {/* Disclaimer */}
+      <div className="border-t border-gray-200 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-4">
+          <p className="text-xs text-gray-500 text-center">
+            This is a demo project for educational purposes only. Do not enter real personal or financial information.
+          </p>
         </div>
       </div>
     </footer>

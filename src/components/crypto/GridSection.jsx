@@ -21,7 +21,7 @@ const GridSection = () => {
               Powerful tools, designed <br /> for the advanced trader.
             </p>
             <p className="text-gray-500">
-              Powerful analytical tools with the safety and security of Coinbase{" "}
+              Powerful analytical tools with advanced security features{" "}
               <br />
               deliver the ultimate trading experience. Tap into sophisticated{" "}
               <br />
@@ -43,7 +43,7 @@ const GridSection = () => {
       <div className="w-fit gap-45 flex flex-row mb-30">
         <div className="gap-3 flex flex-col justify-center">
           <p className="py-2 px-5 border rounded-2xl text-gray-500 border-gray-500 w-50">
-            <span className="mr-5">C</span>COINBASE ONE
+            <span className="mr-5">P</span>PREMIUM
           </p>
           <p className="text-5xl leading-tight font-serif">
             Zero trading fees, <br /> more rewards.

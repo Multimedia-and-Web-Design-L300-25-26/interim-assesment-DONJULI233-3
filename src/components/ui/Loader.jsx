@@ -8,7 +8,7 @@ interface LoaderProps {
 const Loader: React.FC<LoaderProps> = ({ fullScreen = true }) => {
     const content = (
         <div className="flex items-center justify-center">
-            <div className="animate-[coinbase-pulse_1.6s_ease-in-out_infinite]">
+            <div className="animate-pulse">
                 <Logo height={36} className="brightness-0 invert" />
             </div>
         </div>

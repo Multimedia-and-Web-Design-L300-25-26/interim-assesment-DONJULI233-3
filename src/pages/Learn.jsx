@@ -86,7 +86,7 @@ export default function Learn() {
               Ready to get started?
             </h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Create your Coinbase account today and start your crypto journey
+              Create your account today and start your crypto journey
               with confidence.
             </p>
             <Link

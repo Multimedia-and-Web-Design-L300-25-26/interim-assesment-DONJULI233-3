@@ -1,5 +1,6 @@
 {
-  "name": "coinbase-homepage",
+  "name": "crypto-app-student-project",
+  "description": "Crypto App | Student Project Demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",

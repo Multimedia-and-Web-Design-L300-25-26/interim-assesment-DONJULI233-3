@@ -38,7 +38,7 @@ const HomeSignUpSection = () => {
           {/* Removed redundant flex-row from image div */}
           <img
             src={coinLogos}
-            alt="Coinbase Homepage Crypto Circle"
+            alt="Crypto App Demo Logos"
             className="ml-11"
             loading="eager"
             height="350"
@@ -48,7 +48,7 @@ const HomeSignUpSection = () => {
       </div>
       <div className="flex flex-col text-center mt-50 px-120">
         <p className="text-base text-gray-700">
-          DEX trading is offered by Coinbase Bermuda Technologies Ltd.
+          Trading services are for demonstration purposes only.
         </p>{" "}
         {/* Increased size to text-base, darkened color to text-gray-700 */}
         <p className="text-sm text-gray-600 mt-2">

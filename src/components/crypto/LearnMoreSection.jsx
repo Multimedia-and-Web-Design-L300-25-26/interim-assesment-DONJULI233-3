@@ -31,11 +31,10 @@ const LearnMoreSection = () => {
               USDC: The digital dollar for the global crypto economy
             </p>
             <p className="line-clamp-3">
-              Coinbase believes crypto will be part of the solution for creating
+              This demo app showcases how crypto can be part of creating
               an open financial system that is both more efficient and more
-              equitable. We co-founded the Centre Consortium in 2018 to invest
-              in the build of USDC, and since then it has become the second
-              largest stablecoin by market capitalization.
+              equitable. USDC is a popular stablecoin that maintains parity
+              with the US dollar, making it useful for various crypto transactions.
             </p>
           </a>
         </div>

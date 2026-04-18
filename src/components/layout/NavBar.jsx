@@ -7,8 +7,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import coinbaseLogo from "../../assets/coinbaseLogoNavigation-4.svg";
+import { Link, useNavigate } from "react-router-dom";
+import { isAuthenticated, removeToken } from "../../lib/api";
 import BusinessDropDown from "./navBarSections/BusinessDropDown";
 import CompanyDropdown from "./navBarSections/CompanyDropdown";
 import DeveloperDropDown from "./navBarSections/DeveloperDropDown";
@@ -21,6 +21,8 @@ const NavBar = () => {
   const [mobileMenuLevel, setMobileMenuLevel] = useState("main");
   const [activeCategory, setActiveCategory] = useState(null);
   const closeTimer = useRef(null);
+  const navigate = useNavigate();
+  const [isLoggedIn] = useState(isAuthenticated());
 
   const navSections = [
     { name: "Cryptocurrencies", component: null },
@@ -77,7 +79,7 @@ const NavBar = () => {
             %
           </div>
         );
-      case "Coinbase One":
+      case "Premium Service":
         return (
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -97,7 +99,7 @@ const NavBar = () => {
             </svg>
           </div>
         );
-      case "Coinbase Wealth":
+      case "Wealth Management":
         return (
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -174,15 +176,15 @@ const NavBar = () => {
         href: "/earn",
       },
       {
-        title: "Coinbase One",
+        title: "Premium Service",
         description: "Get zero trading fees and more",
-        icon: getIcon("Coinbase One"),
-        href: "/coinbase-one",
+        icon: getIcon("Premium Service"),
+        href: "/premium",
       },
       {
-        title: "Coinbase Wealth",
+        title: "Wealth Management",
         description: "Institutional-grade services for UHNW",
-        icon: getIcon("Coinbase Wealth"),
+        icon: getIcon("Wealth Management"),
         href: "/wealth",
       },
       {
@@ -201,7 +203,7 @@ const NavBar = () => {
     Business: [
       {
         title: "Asset Listings",
-        description: "List your asset on Coinbase",
+        description: "List your asset on our platform",
         icon: (
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -212,7 +214,7 @@ const NavBar = () => {
         href: "/asset-listings",
       },
       {
-        title: "Coinbase Business",
+        title: "Business Solutions",
         description: "Business solutions",
         icon: (
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -301,7 +303,7 @@ const NavBar = () => {
     Developers: [
       {
         title: "Developer Platform",
-        description: "Build on Coinbase",
+        description: "Build on our platform",
         icon: (
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -313,7 +315,7 @@ const NavBar = () => {
       },
       {
         title: "Base",
-        description: "L2 blockchain by Coinbase",
+        description: "L2 blockchain",
         icon: (
           <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
             <div className="w-4 h-4 bg-white rounded-sm"></div>
@@ -337,7 +339,7 @@ const NavBar = () => {
     Company: [
       {
         title: "About",
-        description: "Learn about Coinbase",
+        description: "Learn about us",
         icon: (
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 text-lg font-bold">
             i
@@ -513,14 +515,20 @@ const NavBar = () => {
               <ArrowLeftIcon className="w-5 h-5" />
             </button>
           ) : (
-            <img
-              src={coinbaseLogo}
-              alt="Coinbase Logo"
-              title="Coinbase Logo"
-              width={40}
-              height={40}
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
               className="w-8 h-8 md:w-11 md:h-11"
-            />
+              aria-label="Crypto App Logo"
+            >
+              <circle cx="20" cy="20" r="20" fill="#0052FF" />
+              <path
+                d="M20 6C12.268 6 6 12.268 6 20s6.268 14 14 14 14-6.268 14-14S27.732 6 20 6zm-3.6 16.8a3.6 3.6 0 110-7.2h7.2a3.6 3.6 0 110 7.2h-7.2z"
+                fill="white"
+              />
+            </svg>
           )}
         </div>
 
@@ -556,19 +564,43 @@ const NavBar = () => {
             <GlobeEuropeAfricaIcon className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
-          <Link
-            to="/signin"
-            className="hidden md:inline-block bg-gray-200 py-2 px-4 md:px-6 font-bold rounded-full hover:bg-gray-300 transition-colors text-sm md:text-base text-center text-gray-800 hover:text-blue-600"
-          >
-            Sign In
-          </Link>
+          {isLoggedIn ? (
+            <>
+              <Link
+                to="/profile"
+                className="hidden md:inline-block bg-gray-200 py-2 px-4 md:px-6 font-bold rounded-full hover:bg-gray-300 transition-colors text-sm md:text-base text-center text-gray-800 hover:text-blue-600"
+              >
+                Profile
+              </Link>
+              <button
+                type="button"
+                onClick={() => {
+                  removeToken();
+                  navigate("/");
+                  window.location.reload();
+                }}
+                className="bg-red-600 text-white font-bold py-2 px-4 md:px-6 rounded-full hover:bg-red-700 transition-colors text-sm md:text-base"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/signin"
+                className="hidden md:inline-block bg-gray-200 py-2 px-4 md:px-6 font-bold rounded-full hover:bg-gray-300 transition-colors text-sm md:text-base text-center text-gray-800 hover:text-blue-600"
+              >
+                Sign In
+              </Link>
 
-          <button
-            type="button"
-            className="bg-blue-600 text-white font-bold py-2 px-4 md:px-6 rounded-full hover:bg-blue-700 transition-colors text-sm md:text-base"
-          >
-            Sign Up
-          </button>
+              <Link
+                to="/signup"
+                className="bg-blue-600 text-white font-bold py-2 px-4 md:px-6 rounded-full hover:bg-blue-700 transition-colors text-sm md:text-base"
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
 
           <button
             type="button"

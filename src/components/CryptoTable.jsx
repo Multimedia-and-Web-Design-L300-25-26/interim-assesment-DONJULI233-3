@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from "react";
 
-const tabs = ["Tradable", "Top gainers", "New on Coinbase"];
+const tabs = ["Tradable", "Top gainers", "New Listings"];
 const POLL_MS = 3000;
 const FALLBACK_GHS = 16.5;
 
@@ -316,7 +316,7 @@ const CryptoTable = () => {
               (a.price_change_percentage_24h ?? 0),
           )
           .slice(0, 6);
-      case "New on Coinbase":
+      case "New Listings":
         return allCoins.slice(14, 20);
       default:
         return [];

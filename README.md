@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/bMYWKvYv)
-# Interim Assessment: Full-Stack Integration – Coinbase Clone
+# Interim Assessment: Full-Stack Integration – Juliana's Crypto App Demo
 
-In this assignment, you will integrate your cloned coinbase frontend with a backend API to build a functional cryptocurrency platform with authentication and dynamic data.
+In this assignment, you will integrate your cloned crypto frontend with a backend API to build a functional cryptocurrency platform with authentication and dynamic data.
 
 You are required to implement the features using Node.js with MongoDB as the database. Create proper data models (schemas) and structure your project using best practices (models, routes, and controllers). All features must be exposed through RESTful APIs for the frontend to consume.
 
@@ -61,6 +61,6 @@ Send data to the backend API and ensure it is properly stored in the database (M
 
 ---
 
-Push your backend code to GitHub Classroom, deploy the backend (recommended: Render), and integrate it into your Coinbase clone frontend repository. After completing the integration, deploy the updated frontend as well. Finally, submit the links to your deployed backend, deployed frontend, and your updated Coinbase clone repository via the Google Form attached.
+Push your backend code to GitHub Classroom, deploy the backend (recommended: Render), and integrate it into your crypto app frontend repository. After completing the integration, deploy the updated frontend as well. Finally, submit the links to your deployed backend, deployed frontend, and your updated crypto app repository via the Google Form attached.
 
 **NOTE:** Ensure that all submitted links are accurate and working, as no marks will be awarded for invalid or inaccessible submissions.

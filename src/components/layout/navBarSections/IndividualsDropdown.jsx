@@ -34,12 +34,12 @@ const IndividualsDropdown = () => {
       icon: <ReceiptPercentIcon className="w-5 h-5" />,
     },
     {
-      title: "Coinbase One",
+      title: "Premium Service",
       subtitle: "Get zero trading fees and more",
       icon: <TagIcon className="w-5 h-5" />,
     },
     {
-      title: "Coinbase Wealth",
+      title: "Wealth Management",
       subtitle: "Institutional-grade services for UHNW",
       icon: <SparklesIcon className="w-5 h-5" />,
     },
